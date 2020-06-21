@@ -1,0 +1,18 @@
+@import "./font-face";
+
+// color
+$primary-color: #f6f6f6;
+$secondary-color: #ffffff;
+$accent-color: #010184;
+$text-color: #484848;
+
+// font-weight depends on font-family
+$font-family: (
+  "normal": "Avenir LT Std",
+  "semi-bold": "Avenir 85",
+  "bold": "Avenir LT 65",
+);
+
+// media query
+$ipad: 1024px;
+$mobile: 768px;

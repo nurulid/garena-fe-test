@@ -1,0 +1,26 @@
+@import "./main.scss";
+
+#head {
+  @include backgroundImg("../img/BG-Head.jpg");
+  height: calc(100vh + 36px);
+  color: $secondary-color;
+  .head-wrapper {
+    height: calc(100vh - 36px);
+    @include flexCenter(space-between, row);
+    @include ipad {
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+      padding-top: 50px;
+    }
+    .content {
+      max-width: 60%;
+      @include ipad {
+        max-width: 90%;
+      }
+    }
+
+    .image {
+      max-width: 500px;
+    }
+  }
+}

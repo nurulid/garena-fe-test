@@ -1,0 +1,23 @@
+{
+	"data": [{
+		"id": 1,
+		"univ_name": "Institut Teknologi Bandung",
+		"univ_logo": "https:\/\/web.cdn.id.garenanow.com\/webid\/scholarship\/Logo_ITB.png"
+	}, {
+		"id": 2,
+		"univ_name": "Institut Teknologi Sepuluh Nopember",
+		"univ_logo": "https:\/\/web.cdn.id.garenanow.com\/webid\/scholarship\/Logo_ITS.png"
+	}, {
+		"id": 3,
+		"univ_name": "Binus University",
+		"univ_logo": "https:\/\/web.cdn.id.garenanow.com\/webid\/scholarship\/Logo_Binus.png"
+	}, {
+		"id": 4,
+		"univ_name": "Universitas Gadjah Mada",
+		"univ_logo": "https:\/\/web.cdn.id.garenanow.com\/webid\/scholarship\/Logo_UGM.png"
+	}, {
+		"id": 5,
+		"univ_name": "Universitas Indonesia",
+		"univ_logo": "https:\/\/web.cdn.id.garenanow.com\/webid\/scholarship\/Logo_UI.png"
+	}]
+}

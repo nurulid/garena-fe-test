@@ -1,0 +1,104 @@
+@import "./main.scss";
+
+.nav {
+  background-color: $secondary-color;
+  position: relative;
+
+  .container {
+    @include flexCenter(space-between, row);
+    padding: 20px;
+    min-height: 80px;
+    @include mobile {
+      padding: 10px 10px;
+    }
+  }
+
+  &__logo-wrapper {
+    width: 310px;
+    height: auto;
+    @include mobile {
+      width: 240px;
+    }
+
+  }
+
+  &__menu {
+    position: relative;
+    .close {
+      display: none;
+    }
+    @include mobile {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background-color: #ffffff;
+      height: 100vh;
+      .close {
+        display: block;
+        font-size: 50px;
+        position: absolute;
+        right: 23px;
+        top: 0;
+        cursor: pointer;
+      }
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      @include mobile {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 85vh;
+      }
+      :not(:last-child) {
+        border-right: 2px solid $text-color;
+        @include mobile {
+          border: 0;
+        }
+      }
+
+      li {
+        display: inline-block;
+        @include mobile {
+          display: block;
+          margin-bottom: 30px;
+        }
+
+        a {
+          color: $text-color;
+          font-family: family(semi-bold);
+          font-size: 24px;
+          padding: 0 15px;
+          line-height: 1;
+        }
+      }
+    }
+  }
+
+  &__menu--mobile {
+    @include mobile {
+      display: block;
+    }
+  }
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    @include mobile {
+      display: block;
+    }
+    > div {
+      width: 40px;
+      height: 5px;
+      margin-bottom: 5px;
+      background-color: $text-color;
+    }
+  }
+}
