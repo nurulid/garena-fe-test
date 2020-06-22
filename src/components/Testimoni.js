@@ -1,6 +1,7 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+// import {connect} from 'react-redux'
 
 const Testimoni = ({ dataTestimoni }) => {
   return (
@@ -10,7 +11,7 @@ const Testimoni = ({ dataTestimoni }) => {
         showStatus={false}
         showIndicators={false}
         showThumbs={false}
-        autoPlay={false}
+        autoPlay={true}
         infiniteLoop={true}
         swipeable={true}
         className="carousel-custom"
@@ -32,5 +33,11 @@ const Testimoni = ({ dataTestimoni }) => {
     </section>
   );
 };
+
+// const mapStateToProps = (state) => {
+//   return {
+//     projects: state.project.projects
+//   }
+// }
 
 export default Testimoni;

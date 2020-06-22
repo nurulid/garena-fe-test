@@ -10,7 +10,7 @@ const Partner = ({ dataUniv, dataFaculty }) => {
         showStatus={false}
         showIndicators={false}
         showThumbs={false}
-        autoPlay={false}
+        autoPlay={true}
         infiniteLoop={true}
         swipeable={true}
         className="carousel-custom"

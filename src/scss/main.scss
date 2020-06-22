@@ -31,6 +31,12 @@
   }
 }
 
+@mixin mobile-sm {
+  @media screen and (max-width: $mobile-sm) {
+    @content;
+  }
+}
+
 body {
   background: $primary-color;
   font-family: family(normal);
@@ -206,6 +212,38 @@ h3 {
 
 #timeline {
   padding-top: 100px;
+}
+.timeline-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  @include mobile {
+    flex-direction: row;
+  }
+  .timeline-item {
+    width: 24%;
+    text-align: center;
+    @include mobile {
+      width: 50%;
+      margin-bottom: 30px;
+    }
+    @include mobile-sm {
+      width: 100%;
+    }
+    .title {
+      color: $accent-color;
+      font-size: 20px;
+      font-family: family("semi-bold");
+      width: 65%;
+      margin: 0 auto;
+    }
+    .img-wrapper{
+      text-align: center;
+      width: 160px;
+      margin: 10px auto;
+    }
+  }
 }
 
 #testimoni {
