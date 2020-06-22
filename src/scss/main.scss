@@ -188,6 +188,9 @@ h3 {
       font-size: 18px;
       text-align: left;
       @include mobile {
+        text-align: center;
+      }
+      @include mobile {
         width: 100%;
       }
       .carousel__title {
