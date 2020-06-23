@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
-const Partner = ({ dataUniv, dataFaculty, univ, fakul }) => {
+const Partner = ({ newUniv }) => {
   // console.log("nurul dataUniv " + dataUniv);
   // console.log("nurul dataFaculty " + dataFaculty);
 
@@ -37,18 +37,25 @@ const Partner = ({ dataUniv, dataFaculty, univ, fakul }) => {
         swipeable={true}
         className="carousel-custom"
       >
-        {univ.map((item) => (
-          <div key={item.id}>
+        {newUniv.map((univ) => (
+          <div key={univ.id}>
             <div className="carousel-item">
               <div className="img-wrapper">
-                <img src={item.univ_logo} alt={item.univ_name} />
+                <img src={univ.univ_logo} alt={univ.univ_name} />
               </div>
               <div className="carousel__desc">
-                <div className="carousel__title">{item.univ_name}</div>
+                <div className="carousel__title">{univ.univ_name}</div>
                 <ul>
-                {/* <li key={item.id}>{item.name}</li>; */}
-                  { fakul.map((faculty) => {
+                  {/* { fakul.map((faculty) => {
                       return <li key={faculty.id}>{faculty.name}</li>;
+                    })} */}
+                  {univ &&
+                    univ.fakultas.map((item) => {
+                      return (
+                        <li key={item.id}>
+                          {item.name}
+                        </li>
+                      );
                     })}
                 </ul>
               </div>

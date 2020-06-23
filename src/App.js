@@ -16,7 +16,7 @@ const App = () => {
   const [dataUniv, setDataUniv] = useState([]);
   const [dataFaculty, setDataFaculty] = useState([]);
   const [dataTestimoni, setDataTestimoni] = useState([]);
-  const [univ, setUniv] = useState([]);
+  // const [listUniv, setListUniv] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,7 +25,7 @@ const App = () => {
         "https://form.v2.support.garena.co.id/_/items/sea_scholarship?access_token=wahyutampan&fields=*.*"
       );
       setData(resultDataAll.data.data);
-      
+
       // get data Univ
       const resultUniv = await Axios(
         "https://form.v2.support.garena.co.id/_/items/sea_scholarship_univ?access_token=wahyutampan&fields=*.*"
@@ -34,7 +34,7 @@ const App = () => {
 
       // get data Faculty
       const resultFaculty = await Axios(
-        "https://form.v2.support.garena.co.id/_/items/sea_scholarship_faculty?access_token=wahyutampan&fields=*.*"
+        "https://form.v2.support.garena.co.id/_/items/sea_scholarship_faculty?access_token=wahyutampan"
       );
       setDataFaculty(resultFaculty.data.data);
 
@@ -44,25 +44,26 @@ const App = () => {
       );
       setDataTestimoni(resultTestimoni.data.data);
     };
+
     fetchData();
   }, []);
 
+  // merge with relation
   const newUniv = dataUniv.map((x) => ({
     fakultas: dataFaculty.filter((item) => item.univ_id === x.id),
     ...x,
   }));
-  console.log(
-    dataUniv.map((x) => ({
-      fakultas: dataFaculty.filter((item) => item.univ_id === x.id),
-      ...x,
-    }))
-  );
 
-  useEffect(() => {
-    setUniv(newUniv);
-  }, [dataFaculty]);
+  // setListUniv(newUniv);
 
-  // console.log(univ);
+  // console.log(
+  //   dataUniv.map((x) => ({
+  //     fakultas: dataFaculty.filter((item) => item.univ_id === x.id),
+  //     ...x,
+  //   }))
+  // );
+
+  // console.log(listUniv);
 
   return (
     <div className="App">
@@ -70,7 +71,7 @@ const App = () => {
       <Head />
       <div className="container">
         <Program firstData={data[0] || {}} />
-        <Partner dataUniv={dataUniv} dataFaculty={dataFaculty} univ={univ} />
+        <Partner newUniv={newUniv} />
         {/* <Univ /> */}
         <Timeline firstData={data[0] || {}} />
         <Testimoni dataTestimoni={dataTestimoni} />

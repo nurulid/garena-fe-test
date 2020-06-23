@@ -22,7 +22,7 @@ const Testimoni = ({ dataTestimoni }) => {
               <div className="img-wrapper">
                 <img src={item.image} alt={item.name} />
               </div>
-              <div className="carousel__desc carousel__desc--testi">
+              <div className="carousel__desc">
                 <div className="carousel__detail">{item.story}</div>
                 <div className="carousel__title">{item.name}</div>
               </div>
